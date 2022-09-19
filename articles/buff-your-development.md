@@ -699,7 +699,7 @@ $ echo myconf.mk >> .gitignore
 
 ### 自動インストール時のmtime更新
 例えばPHPの開発じゃと`composer install`で依存ライブラリをインストールするじゃろう。
-ただ[composer](https://getcomposer.org/)はインストールすべきライブラリがないときにvendorディレクトリを更新しないため、mtimeが更新されないことがある。
+ただ[composer](https://getcomposer.org/)はインストールすべきライブラリがないときに`vendor`ディレクトリを更新しないため、mtimeが更新されないことがある。
 こういったばあい、**`touch`して明示的にmtimeを更新する**しておくとよいぞ。
 
 ```makefile
