@@ -52,7 +52,7 @@ git commit -m 'Initial commit'
 
 `node_modules` は `pacakge.json` や `package-lock.json` からできる。この考え方は非常に重要じゃ。
 
-古の賢者達はこの**依存関係**を以下のような**術式**で表す。
+この**依存関係**を以下のような**術式**で表す。
 
 ```makefile
 node_modules: package.json package-lock.json
@@ -67,12 +67,12 @@ node_modules: package.json package-lock.json
 	npm ci
 ```
 
-`npm ci` に利いている **インデントはタブ** であることに注意するのじゃ。古の術式ゆえな。丁寧に扱う必要がある。
+`npm ci` に利いている **インデントはタブ** であることに注意するのじゃ。古来の術式ゆえな。丁寧に扱う必要がある。
 この術式ひとまとまりを**ルール**と呼ぶ。
 
 さて、この術式を **`Makefile` という名で保存する**のじゃ。
 
-…そうじゃ。**古代の術式とは、makeのことじゃ。**
+…そうじゃ。**古来の術式とは、makeのことじゃ。**
 
 ### 詠唱
 `node_modules` は一度消しておくぞ。
