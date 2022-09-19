@@ -6,7 +6,7 @@ topics: [make,Nodejs,Docker,PHP,Go]
 published: true
 ---
 
-浮かない顔をしておるな。訳を話してみよ。
+浮かない顔をしておるな。ワケを話してみよ。
 
 ## npmの依存パッケージが増えた
 ふむ。**npmで依存パッケージを増やした**と。それで？　なに、**他の開発者から _動かない_ と言われた**のか。で、**毎回 _`npm ci`をしてくれ_ と頼んでいる**わけか。
@@ -45,7 +45,9 @@ git add .gitignore package.json package-lock.json
 git commit -m 'Initial commit'
 ```
 
-なぜか？ 理由はいくつかあるじゃろうが大前提として
+なぜか？
+
+理由はいくつかあるじゃろうが大前提として
 **`node_modules` は `package.json` や `package-lock.json`から構築できるから**じゃ。
 
 ### 術式
