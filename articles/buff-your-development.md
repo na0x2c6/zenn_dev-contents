@@ -777,7 +777,7 @@ _「make」という言葉で記事をそっ閉じされずにmakeの忘れら�
 
 表現としてこういった形になり賛否あるかと思いますが、あしからず受け取っていただけますと幸いです。
 
-語弊がある表現などあればコメントや[GitHubのIssue](https://github.com/na0x2c6/zenn_dev-contents/issues)でご連絡ください。
+語弊がある表現などあればコメントや[GitHubから](https://github.com/na0x2c6/zenn_dev-contents/blob/main/articles/buff-your-development.md)の編集提案でご連絡ください。
 
 ## 謝辞
 末筆ながらmakeの良さに気づかせてもらえたのはクラスメソッドさんの記事でした。この場を借りてお礼申しあげます。
