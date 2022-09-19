@@ -211,7 +211,7 @@ $ make app
 ![](https://storage.googleapis.com/zenn-user-upload/1116202c2e9e-20220919.gif)
 
 **`npm ci` が自動で実行されてからアプリが起動した**じゃろう。
-`app` ターゲットは `node_modules` に依存しておる。makeは**依存関係を解決するため**に、**`node_modules` の作成を先に行ってから**`app` ターゲットの処理を実行したわけじゃ。
+`app` ターゲットは `node_modules` に依存しておる。makeは**依存関係を解決するため**に、**`node_modules` の作成を先に行ってから**`app` ルールのコマンドスクリプトを実行したわけじゃ。
 
 ちなみに術式の起動は `make` だけでもできる。**詠唱破棄**じゃな。
 
@@ -345,10 +345,10 @@ gitのブランチを切り替えた際、**ブランチ間で差異があるフ
 
 ## Dockerのビルドを自動化する
 
-同じ考え方で **[Docker](https://www.docker.com/)のビルドも自動化できる**ぞよ。
+同じ考え方で **[Docker](https://www.docker.com/)のビルドも自動化**してみよう。
 
 ### 準備
-先程のアプリをDockerで起動してみるぞ。
+先程のアプリをDockerで起動するために、まず簡単な`Dockerfile`を作成するかの。
 
 ```dockerfile:image/Dockerfile
 FROM node:14-alpine
@@ -484,8 +484,8 @@ app: node_modules docker-image
 $ make target key:=value # 変数keyにvalueを設定
 ```
 
-#### 処理と改行
-ターゲットの処理は**1行に1つのコマンドを記述する。**
+#### コマンドスクリプトと改行
+各ルールのコマンドスクリプトには**1行に1つのコマンドを記述する。**
 複数行に渡って書きたいばあいは、**末尾をバックスラッシュ（`\`）でエスケープする必要がある。**
 このあたりは一般的なシェルスクリプトと同様じゃな。
 
