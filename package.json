@@ -1,0 +1,23 @@
+{
+  "name": "zenn_dev-contents",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/na0x2c6/zenn_dev-contents.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/na0x2c6/zenn_dev-contents/issues"
+  },
+  "homepage": "https://github.com/na0x2c6/zenn_dev-contents#readme",
+  "dependencies": {
+    "zenn-cli": "^0.1.125"
+  }
+}
