@@ -501,7 +501,7 @@ some-target:
 	echo $(PWD) # /home/user
 	cd somewhere
 	echo $(PWD) # /home/user # cdコマンド実行プロセスとは別プロセス
-	cd; echo $(PWD) # /home/user/somewhere
+	cd somewhere; echo $(PWD) # /home/user/somewhere
 ```
 
 #### `$`のエスケープ
