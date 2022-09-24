@@ -406,7 +406,7 @@ docker-image: image/Dockerfile
 
 ```sh
 $ docker build -q image/
-sha256:12ef0aae3275ab087f8835d735632140f960890fa01c70ab9681c8812c014b9f
+sha256:83894396cac1aeb30055b390ec6c17152a9904fb0103ff560c2db51189fd82e5
 ```
 
 これを`tee`コマンドで`docker-image`ファイルに保存しているわけじゃな。
@@ -544,7 +544,7 @@ $ make
 npm ci
 added 57 packages in 0.132s
 docker build -q image/ | tee docker-image
-sha256:12ef0aae3275ab087f8835d735632140f960890fa01c70ab9681c8812c014b9f
+sha256:83894396cac1aeb30055b390ec6c17152a9904fb0103ff560c2db51189fd82e5
 docker run --rm -it --volume=/home/user/sample-app:/home/node --user=node --workdir=/home/node \
                 $(cat docker-image)
 Example app listening on port 3000
