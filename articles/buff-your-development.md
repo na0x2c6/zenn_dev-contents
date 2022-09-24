@@ -366,7 +366,7 @@ CMD ["node"]
 -	node server.js
 +app: node_modules docker-image
 +	docker run --rm -it --volume=$(PWD):/home/node --user=node --workdir=/home/node \
-+		$$(cut -d: -f2 docker-image) node server.js
++		$$(cat docker-image) node server.js
  
  node_modules: package.json package-lock.json
  	npm ci
@@ -456,7 +456,7 @@ app: node_modules docker-image
 .PHONY: app
 app: node_modules docker-image
 	docker run --rm -it --volume=$(PWD):/home/node --user=node --workdir=/home/node \
-		$$(cut -d: -f2 docker-image) node server.js
+		$$(cat docker-image) node server.js
 ```
 
 新しい術式が増えたためいくつか解説しておく。このあたりも少々クセがあるが、難しいものではないじゃろう。
@@ -491,7 +491,7 @@ $ make target key:=value # 変数keyにvalueを設定
 
 ```makefile
 	docker run --rm -it --volume=$(PWD):/home/node --user=node --workdir=/home/node \
-		$$(cut -d: -f2 docker-image) node server.js
+		$$(cat docker-image) node server.js
 ```
 
 注意点として、**コマンドごとに別のシェルプロセスが起動する**ため、cdコマンドを利用してカレントディレクトリを変えながらコマンドを実行したいばあいなどは、**1つのシェルプロセス内で処理を完結する必要がある。**
@@ -506,7 +506,7 @@ some-target:
 
 #### `$`のエスケープ
 
-コマンドで`$`を表現したいばあいには **`$$`のように書くことでエスケープできる。** サンプルの`$$(cut -d: -f2 docker-image)`ではシェルのコマンド展開記法`$(...)`の`$`をエスケープしておる。^[`cut`は文字列を分解し指定のフィールドを取り出せる。`docker-image`ファイルには`sha256:abcd...`という形式の文字列が格納されているため`-d:`で区切り文字を`:`に、`-f2`で2番目のフィールドを指定することでハッシュ文字列が取得できる]
+コマンドで`$`を表現したいばあいには **`$$`のように書くことでエスケープできる。** サンプルの`$$(cat docker-image)`ではシェルのコマンド展開記法`$(...)`の`$`をエスケープしておる。
 
 
 ### 術式完成
@@ -517,7 +517,7 @@ some-target:
 .PHONY: app
 app: node_modules docker-image
 	docker run --rm -it --volume=$(PWD):/home/node --user=node --workdir=/home/node \
-		$$(cut -d: -f2 docker-image) node server.js
+		$$(cat docker-image) node server.js
 
 node_modules: package.json package-lock.json
 	npm ci
@@ -546,7 +546,7 @@ added 57 packages in 0.132s
 docker build -q image/ | tee docker-image
 sha256:12ef0aae3275ab087f8835d735632140f960890fa01c70ab9681c8812c014b9f
 docker run --rm -it --volume=/home/user/sample-app:/home/node --user=node --workdir=/home/node \
-                $(cut -d: -f2 docker-image)
+                $(cat docker-image)
 Example app listening on port 3000
 ```
 
@@ -620,7 +620,7 @@ node_modules: package.json package-lock.json
  .PHONY: app
 -app: node_modules docker-image
 -	docker run --rm -it --volume=$(PWD):/home/node --user=node --workdir=/home/node \
--		$$(cut -d: -f2 docker-image) node server.js
+-		$$(cat docker-image) node server.js
 +app: node_modules
 +	$(NODE) server.js
  
@@ -657,7 +657,7 @@ NODE := node
 
 ```makefile:myconf.mk
 NODE := docker run --rm -it --volume=$(PWD):/home/node --user=node --workdir=/home/node \
-	$$(cut -d: -f2 docker-image)
+	$$(cat docker-image)
 
 app: docker-image # 依存関係の追加
 
