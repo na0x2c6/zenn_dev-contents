@@ -234,7 +234,7 @@ $ git commit
 一度ブランチを変えるぞ。`topic`ブランチを作成してチェックアウトする。
 
 ```sh
-$ git switch -c topic
+$ git checkout -b topic
 ```
 
 パッケージを追加し先程のアプリを改修する。ログのフォーマットでも変えるかの。
@@ -308,7 +308,7 @@ $ git commit
 元のブランチに切り替え、この後のわかりやすさのために`node_modules`を削除するぞ。
 
 ```sh
-$ git switch main # 元のブランチへ
+$ git checkout main # 元のブランチへ
 $ rm -rf node_modules
 ```
 
@@ -325,7 +325,7 @@ Example app listening on port 3000
 そしてもう一度`topic`ブランチをチェックアウトしてアプリを起動すると…
 
 ```sh
-$ git switch topic
+$ git checkout topic
 Switched to branch 'topic'
 ~/tmp/node-test on topic                                                     
 $ make
