@@ -1,5 +1,5 @@
 ---
-title: "現代開発にバフを掛ける古来の術式"
+title: "npm ci、docker build、etcを自動化する古来の術式"
 emoji: "🧙‍♂️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [make,Nodejs,Docker,PHP,Go]
