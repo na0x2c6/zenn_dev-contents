@@ -535,7 +535,7 @@ docker build --iidfile=docker-image image/
 [+] Building 0.1s (5/5) FINISHED
 ...
 docker run --rm -it --volume=/home/user/sample-app:/home/node --user=node --workdir=/home/node \
-                $(cat docker-image)
+                $(cat docker-image) node server.js
 Example app listening on port 3000
 ```
 
