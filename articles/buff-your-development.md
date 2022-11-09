@@ -372,7 +372,7 @@ CMD ["node"]
  	npm ci
 +
 +docker-image: image/Dockerfile
-+	docker build -q image/ | tee docker-image
++	docker build --iidfile=docker-image image/
 
 ```
 
@@ -399,22 +399,10 @@ docker-image: image
 
 ```makefile
 docker-image: image/Dockerfile
-	docker build -q image/ | tee docker-image
+	docker build --iidfile=docker-image image/
 ```
 
-`docker build -q image`で`image/Dockerfile`のビルドを行うと、`-q`フラグによってビルド後にイメージハッシュが出力される。
-
-```sh
-$ docker build -q image/
-sha256:83894396cac1aeb30055b390ec6c17152a9904fb0103ff560c2db51189fd82e5
-```
-
-これを`tee`コマンドで`docker-image`ファイルに保存しているわけじゃな。
-
-```makefile
-docker-image: image/Dockerfile
-	docker build -q image/ | tee docker-image
-```
+`docker build`で`--iidfile`オプションを利用すると、ビルド後のイメージハッシュを指定のファイルに書き出すことができる。今回のばあい`docker-image`ファイルにイメージハッシュを書き出したというわけじゃ。
 
 ちなみにビルドしたコンテナイメージにタグ名をつけて管理するなら、`docker-image`ファイルは`touch`コマンドで作成してもよい。^[`touch`は標準でファイルのmtimeを現在時刻に更新する。ファイルがなければ空ファイルを作成する]
 
@@ -523,7 +511,7 @@ node_modules: package.json package-lock.json
 	npm ci
 
 docker-image: image/Dockerfile
-	docker build -q image/ | tee docker-image
+	docker build --iidfile=docker-image image/
 ```
 
 依存関係をグラフにするとこうじゃ。
@@ -542,9 +530,10 @@ graph TB
 $ rm -rf node_modules docker-image # 動作確認のため一度消す
 $ make
 npm ci
-added 57 packages in 0.132s
-docker build -q image/ | tee docker-image
-sha256:83894396cac1aeb30055b390ec6c17152a9904fb0103ff560c2db51189fd82e5
+added 57 packages in 0.133s
+docker build --iidfile=docker-image image/
+[+] Building 0.1s (5/5) FINISHED
+...
 docker run --rm -it --volume=/home/user/sample-app:/home/node --user=node --workdir=/home/node \
                 $(cat docker-image)
 Example app listening on port 3000
@@ -628,7 +617,7 @@ node_modules: package.json package-lock.json
 -	npm ci
 -
 -docker-image: image/Dockerfile
--	docker build -q image/ | tee docker-image
+-	docker build --iidfile=docker-image image/
 +	$(NPM) ci
 ```
 :::
@@ -662,7 +651,7 @@ NODE := docker run --rm -it --volume=$(PWD):/home/node --user=node --workdir=/ho
 app: docker-image # 依存関係の追加
 
 docker-image: image/Dockerfile
-	docker build -q image/ | tee docker-image
+	docker build --iidfile=docker-image image/
 ```
 
 `NODE`変数を`docker`コマンドで置き換え、`app`ターゲットの依存関係を追加した。
