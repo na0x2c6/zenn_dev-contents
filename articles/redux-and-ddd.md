@@ -163,7 +163,7 @@ ReduxToolkit では上記を slice という単位でまとめて作成するこ
 
 これをドメインモデルとして管理するために、次のようなモデルを考えてみます。[^brs]
 
-[^brs]: [Basic Reducer Structure | Redux](https://redux.js.org/usage/structuring-reducers/basic-reducer-structure#basic-state-shape) にあるように、上記のモデルは更に定義を分けて考えることもできます。例えば `contents` や `scheduledAt` は _Domain data_ であり、`submitType` は _App state_ であると言えそうです。
+[^brs]: [Basic Reducer Structure | Redux](https://redux.js.org/usage/structuring-reducers/basic-reducer-structure#basic-state-shape) にあるように、モデルの定義をより詳細に分けて考えることもできます。例えば `contents` や `scheduledAt` は _Domain data_ であり、`submitType` は _App state_ であると言えそうです。
 
 
 ```ts
