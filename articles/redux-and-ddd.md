@@ -161,7 +161,10 @@ ReduxToolkit では上記を slice という単位でまとめて作成するこ
   - 予約投稿 … 投稿する時間を指定して予約投稿できる
   - 下書き保存 … 下書きとして保存する
 
-これをドメインモデルとして管理するために、次のようなモデルを考えてみます。
+これをドメインモデルとして管理するために、次のようなモデルを考えてみます。[^brs]
+
+[^brs]: [Basic Reducer Structure | Redux](https://redux.js.org/usage/structuring-reducers/basic-reducer-structure#basic-state-shape) にあるように、上記のモデルは更に定義を分けて考えることもできます。例えば `contents` や `scheduledAt` は _Domain data_ であり、`submitType` は _App state_ であると言えそうです。
+
 
 ```ts
 type SubmitType = 
