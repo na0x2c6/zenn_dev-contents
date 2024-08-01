@@ -3,7 +3,7 @@ title: "長く読まれるブログを書く"
 emoji: "📎"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: [blog, writing]
-published: false
+published: true
 publication_name: socialdog
 ---
 
