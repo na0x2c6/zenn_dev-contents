@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -40 740 330" font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="15">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7a7a7a"/>
+    </marker>
+  </defs>
+
+  <line x1="10" y1="80" x2="685" y2="80" stroke="#d6d6d6" stroke-width="1"/>
+  <line x1="10" y1="210" x2="525" y2="210" stroke="#d6d6d6" stroke-width="1"/>
+
+  <line x1="82" y1="80" x2="118" y2="80" stroke="#7a7a7a" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="162" y1="80" x2="318" y2="80" stroke="#7a7a7a" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="362" y1="80" x2="534" y2="80" stroke="#7a7a7a" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="584" y1="80" x2="618" y2="80" stroke="#7a7a7a" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <path d="M 155 98 L 224 192" stroke="#7a7a7a" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <line x1="262" y1="210" x2="298" y2="210" stroke="#7a7a7a" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="342" y1="210" x2="378" y2="210" stroke="#7a7a7a" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="422" y1="210" x2="458" y2="210" stroke="#7a7a7a" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <path d="M 495 192 L 547 98" stroke="#7a7a7a" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <g>
+    <circle cx="60" cy="80" r="22" fill="#f4f4f4" stroke="#a8a8a8" stroke-width="1.5"/>
+    <text x="60" y="80" text-anchor="middle" dy="0.35em" fill="#424242" font-weight="600">A</text>
+  </g>
+  <g>
+    <circle cx="140" cy="80" r="22" fill="#f4f4f4" stroke="#a8a8a8" stroke-width="1.5"/>
+    <text x="140" y="80" text-anchor="middle" dy="0.35em" fill="#424242" font-weight="600">B</text>
+  </g>
+  <g>
+    <circle cx="340" cy="80" r="22" fill="#f4f4f4" stroke="#a8a8a8" stroke-width="1.5"/>
+    <text x="340" y="80" text-anchor="middle" dy="0.35em" fill="#424242" font-weight="600">G</text>
+  </g>
+
+  <g>
+    <circle cx="560" cy="80" r="25" fill="#fff2c4" stroke="#e0a800" stroke-width="2.5"/>
+    <text x="560" y="80" text-anchor="middle" dy="0.35em" fill="#704c00" font-weight="700">S'</text>
+  </g>
+  <line x1="560" y1="55" x2="560" y2="-12" stroke="#e0a800" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <text x="560" y="-22" text-anchor="middle" fill="#a06000" font-weight="600" font-size="14">親が 2 つ（G と F）</text>
+
+  <g>
+    <circle cx="640" cy="80" r="22" fill="#f4f4f4" stroke="#a8a8a8" stroke-width="1.5"/>
+    <text x="640" y="80" text-anchor="middle" dy="0.35em" fill="#424242" font-weight="600">H</text>
+  </g>
+
+  <g>
+    <circle cx="240" cy="210" r="22" fill="#fde4a6" stroke="#d4a017" stroke-width="1.5"/>
+    <text x="240" y="210" text-anchor="middle" dy="0.35em" fill="#7a5500" font-weight="600">C</text>
+  </g>
+  <g>
+    <circle cx="320" cy="210" r="22" fill="#cfe6ad" stroke="#7cb342" stroke-width="1.5"/>
+    <text x="320" y="210" text-anchor="middle" dy="0.35em" fill="#3d6019" font-weight="600">D</text>
+  </g>
+  <g>
+    <circle cx="400" cy="210" r="22" fill="#b8d8f4" stroke="#4a90c4" stroke-width="1.5"/>
+    <text x="400" y="210" text-anchor="middle" dy="0.35em" fill="#1f3d61" font-weight="600">E</text>
+  </g>
+  <g>
+    <circle cx="480" cy="210" r="22" fill="#d6c8ec" stroke="#7e57c2" stroke-width="1.5"/>
+    <text x="480" y="210" text-anchor="middle" dy="0.35em" fill="#3f2a72" font-weight="600">F</text>
+  </g>
+
+  <text x="690" y="80" dominant-baseline="middle" fill="#666" font-weight="600">main</text>
+  <text x="530" y="210" dominant-baseline="middle" fill="#666" font-weight="600">feature</text>
+
+  <text x="370" y="275" text-anchor="middle" fill="#9a9a9a" font-size="13">古い ─&gt; 新しい</text>
+</svg>
